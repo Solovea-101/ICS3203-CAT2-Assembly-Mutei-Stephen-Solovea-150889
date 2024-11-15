@@ -1,38 +1,38 @@
 # ICS3203-CAT2-Assembly-Mutei-Stephen-Solovea-150889
 
-# Assembly Language Programs
+# Assembly Language Programs for Control, Array Manipulation, Modularization, and Simulation
 
-This repository contains several Assembly Language programs developed for various tasks, including control flow, array manipulation, subroutine usage, and port-based simulation.
+This repository contains four Assembly programs created to showcase control flow, array operations, modular programming, and input/output simulation using port-based actions.
 
-## Programs Overview
+## Program Summaries
 
-### 1. Control Flow and Conditional Logic
-- **Purpose:** Classifies a user-input number as “POSITIVE,” “NEGATIVE,” or “ZERO” using branching logic.
-- **Key Features:** Uses both conditional and unconditional jumps to manage flow effectively.
+### 1. Number Classification Program
+- **Description**: This program reads a number from user input, checks if the number is positive, negative, or zero, and then outputs the corresponding classification.
+- **Highlights**: Uses both conditional and unconditional jumps for flexible program flow based on the user's input.
 
-### 2. Array Manipulation with Looping and Reversal
-- **Purpose:** Reverses an array of integers in place without using additional memory.
-- **Key Features:** Implements looping and direct memory access for in-place reversal.
+### 2. Array Reversal Program
+- **Description**: This program takes an array of integers from the user, reverses the array in place, and outputs the result.
+- **Highlights**: The reversal is done without extra memory, using index swapping within a loop to achieve the effect.
 
-### 3. Modular Program with Subroutines for Factorial Calculation
-- **Purpose:** Calculates the factorial of a given number using a subroutine.
-- **Key Features:** Demonstrates modular code, register handling, and stack usage to preserve register values.
+### 3. Factorial Calculation with a Subroutine
+- **Description**: This modular program calculates the factorial of an input number by calling a subroutine and handling register values via the stack.
+- **Highlights**: Demonstrates the use of the stack for register preservation in modular code, with results stored in a specific register for easy access.
 
-### 4. Data Monitoring and Control Using Port-Based Simulation
-- **Purpose:** Simulates a control program that reads a sensor value and activates motor and alarm based on water levels.
-- **Key Features:** Uses specific memory locations or input ports to simulate sensor-based motor control and alarm triggering.
+### 4. Sensor-Based Simulation Program
+- **Description**: Simulates reading a sensor value and controls a motor or an alarm based on predefined thresholds.
+- **Highlights**: Uses specific memory locations to simulate hardware components and performs actions based on the simulated sensor input.
 
-## Compiling and Running
+## Compiling and Running Instructions
 
-1. **Assembly Compiler**: These programs are designed to be run on an x86 assembler (e.g., NASM).
-2. **Steps**:
-   - Compile using `nasm -f <output format> <filename>.asm -o <filename>.o`
-   - Link with `ld -m <output format> <filename>.o -o <filename>`
-   - Run using `./<filename>`
+1. **Compiler Requirements**: These programs are designed for NASM assembler.
+2. **To Compile and Run**:
+   - Use `nasm -f elf <filename>.asm -o <filename>.o` to compile each file.
+   - Link with `ld -m elf_i386 <filename>.o -o <filename>`.
+   - Run the executable with `./<filename>`.
 
-## Insights and Challenges
+## Observations and Challenges
 
-- **Control Flow and Conditional Logic:** Choosing the correct jump instructions for branching presented a challenge in ensuring the flow is both logical and minimal in instructions.
-- **Array Manipulation:** Memory management directly in assembly, especially for reversing an array without additional memory, required careful indexing.
-- **Modular Program:** Using the stack for register preservation was essential to maintaining program integrity, especially when calling subroutines.
-- **Data Monitoring and Control:** Simulating real-world ports and sensor interactions was complex due to the constraints of assembly language.
+- **Control Flow**: Achieving smooth branching using both conditional and unconditional jumps required precise planning of program flow.
+- **Array Reversal**: In-place reversal without additional memory required meticulous index management.
+- **Modular Programming**: Managing registers through the stack effectively ensured modular integrity and correct results.
+- **Sensor Simulation**: Simulating sensor input and motor/alarm control presented unique challenges in mirroring real-world behavior using memory manipulation.
